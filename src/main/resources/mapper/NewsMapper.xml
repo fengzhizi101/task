@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.task.miracletask.dao.NewsMapper">
+    <resultMap id="NewsMapping" type="com.task.miracletask.entity.News" >
+       <result column="id" property="id"></result>
+       <result column="category_id" property="categoryId"></result>
+       <result column="publish_time" property="publishTime"></result>
+       <result column="title" property="title"></result>
+       <result column="created_time" property="createdTime"></result>
+    </resultMap>
+    <!-- 
+    <insert id="addLoginLog" parameterType="LoginLog">
+        insert into login_log
+        (uid, login_type, type, ip, created_time) values (#{uid}, #{loginType}, #{type}, #{ip}, #{createdTime});
+    </insert>
+     -->
+    <select id="findNewsById" parameterType="com.task.miracletask.entity.News">
+        select * from news where id = #{id};
+    </select>
+</mapper>
